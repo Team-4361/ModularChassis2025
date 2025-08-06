@@ -254,7 +254,7 @@ public class Robot extends TimedRobot {
 
             
 
-            //Agitator (spin - Talon 3)
+            //Agitator (spin - Talon 2)
             if (lStick.getRawButtonPressed(3)) {
                 modTalon2.set(-1.0);
             } else if (lStick.getRawButtonReleased(3)) {
@@ -295,7 +295,7 @@ public class Robot extends TimedRobot {
             if (xboxController.getRightBumperPressed()) {
                 modTalon1.set(1.0);
             } else if (xboxController.getRightBumperReleased()) {
-                modTalon3.set(0.0);
+                modTalon1.set(0.0);
             }
 
             //if (xCont.getX`Pressed()) {
