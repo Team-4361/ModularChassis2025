@@ -52,7 +52,7 @@ public class Robot extends TimedRobot {
     // if mode = 3; romulus.
     // if mode = 4; Xbox tank/arcade drive control (no operator)
     // if mode = 5; t-shirt cannon
-    public static int mode = 3; //t-shirt cannon 12/19/24 needs deploy
+    public static int mode = 5; //t-shirt cannon 12/19/24 needs deploy
     SendableChooser<String> modularMode = new SendableChooser<>();
 
 
