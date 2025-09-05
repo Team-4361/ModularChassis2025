@@ -255,23 +255,23 @@ public class Robot extends TimedRobot {
             
 
             //Agitator (spin - Talon 2)
-            if (lStick.getRawButtonPressed(3)) {
+            if (xboxController.getAButtonPressed()) {
                 modTalon2.set(-1.0);
-            } else if (lStick.getRawButtonReleased(3)) {
+            } else if (xboxController.getAButtonReleased()) {
                 modTalon2.set(0.0);
             }
 
-            if (lStick.getRawButtonPressed(4)) {
+            if (xboxController.getYButtonPressed()) {
                 modTalon2.set(1.0);
-            } else if (lStick.getRawButtonReleased(4)) {
+            } else if (xboxController.getYButtonReleased()) {
                 modTalon2.set(0.0);
             }
 
             //Indexer and Shooter (Talon 4,2 resp.) 
-            if (rStick.getRawButtonPressed(6)) {
+            if (xboxController.getBButtonPressed()) {
                 modTalon4.set(1.0);
                 modTalon3.set(-1.0);
-            } else if (rStick.getRawButtonReleased(6)) {
+            } else if (xboxController.getBButtonReleased()) {
                 modTalon4.set(0.0);
                 modTalon3.set(0.0);
             }
