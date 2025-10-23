@@ -255,23 +255,23 @@ public class Robot extends TimedRobot {
             
 
             //Agitator (spin - Talon 2)
-            if (xboxController.getAButtonPressed()) {
+            if (xCont.getAButtonPressed()) {
                 modTalon2.set(-1.0);
-            } else if (xboxController.getAButtonReleased()) {
+            } else if (xCont.getAButtonReleased()) {
                 modTalon2.set(0.0);
             }
 
-            if (xboxController.getYButtonPressed()) {
+            if (xCont.getYButtonPressed()) {
                 modTalon2.set(1.0);
-            } else if (xboxController.getYButtonReleased()) {
+            } else if (xCont.getYButtonReleased()) {
                 modTalon2.set(0.0);
             }
 
             //Indexer and Shooter (Talon 4,2 resp.) 
-            if (xboxController.getBButtonPressed()) {
-                modTalon4.set(1.0);
-                modTalon3.set(-1.0);
-            } else if (xboxController.getBButtonReleased()) {
+            if (xCont.getXButtonPressed()) {
+                modTalon4.set(-1.0);
+                modTalon3.set(1.0);
+            } else if (xCont.getXButtonReleased()) {
                 modTalon4.set(0.0);
                 modTalon3.set(0.0);
             }
@@ -284,17 +284,17 @@ public class Robot extends TimedRobot {
             //}
 
             //Intake in (Talon 1)
-            if (xboxController.getLeftBumperPressed()) {
+            if (xCont.getLeftBumperPressed()) {
                 modTalon1.set(-1.0);
-            } else if (xboxController.getLeftBumperReleased()) {
+            } else if (xCont.getLeftBumperReleased()) {
                 modTalon1.set(0.0);
             }
 
 
             //Intake out
-            if (xboxController.getRightBumperPressed()) {
+            if (xCont.getRightBumperPressed()) {
                 modTalon1.set(1.0);
-            } else if (xboxController.getRightBumperReleased()) {
+            } else if (xCont.getRightBumperReleased()) {
                 modTalon1.set(0.0);
             }
 
@@ -342,7 +342,7 @@ public class Robot extends TimedRobot {
             //System.out.println("moving right");
             //System.out.println(rightLimit.get());
 
-            // a and y are up/down (mod talon 2) 
+            // a and y are up/down (mod talon 2) //changning for succasunna
             if (xCont.getAButtonPressed()) {
                 modTalon2.set(-0.45);
                 abtnReleased = true;
@@ -359,7 +359,17 @@ public class Robot extends TimedRobot {
                 ybtnReleased = false;
             }
 
-            if (xCont.getLeftTriggerAxis() >= 0.7 && xCont.getRightTriggerAxis() >= 0.7 && xCont.getXButton()) {
+            /*if (xboxController.getXButtonPressed()) {
+                modTalon4.set(1.0);
+                modTalon3.set(-1.0);
+            } else if (xboxController.getXButtonReleased()) {
+                modTalon4.set(0.0);
+                modTalon3.set(0.0);
+            }*/
+
+            
+
+             if (xCont.getLeftTriggerAxis() >= 0.7 && xCont.getRightTriggerAxis() >= 0.7 && xCont.getXButton()) {
                 valveTimer.reset();
                 valveTimer.start();
                 
